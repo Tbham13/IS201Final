@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Joke Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fce4ec;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: #ec407a;
+      color: white;
+      padding: 20px;
+    }
+
+    .container {
+      margin: 50px auto;
+      padding: 30px;
+      max-width: 600px;
+      background-color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #ec407a;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #d81b60;
+    }
+
+    .joke {
+      font-size: 18px;
+      margin-top: 30px;
+    }
+
+    nav {
+      margin-top: 40px;
+    }
+
+    nav a {
+      color: #ec407a;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Random Joke Generator</h1>
+    <p>Click the button to make yourself laugh!</p>
+  </header>
+
+  <div class="container">
+    <button onclick="generateJoke()">Get a Joke</button>
+    <div class="joke" id="jokeDisplay">😂 Ready to laugh?</div>
+  </div>
+
+  <nav>
+    <a href="scratch.html">← Back to Scratch Page</a>
+  </nav>
+
+  <script>
+    const jokes = [
+      "Why don't scientists trust atoms? Because they make up everything!",
+      "Why did the scarecrow win an award? Because he was outstanding in his field!",
+      "I told my wife she was drawing her eyebrows too high. She looked surprised.",
+      "Why don’t skeletons fight each other? They don’t have the guts.",
+      "Parallel lines have so much in common… it’s a shame they’ll never meet.",
+      "I only know 25 letters of the alphabet. I don't know y."
+    ];
+
+    function generateJoke() {
+      const randomIndex = Math.floor(Math.random() * jokes.length);
+      document.getElementById("jokeDisplay").textContent = jokes[randomIndex];
+    }
+  </script>
+
+</body>
+</html>
